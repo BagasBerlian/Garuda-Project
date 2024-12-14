@@ -15,8 +15,19 @@ handle semua relasi database di models
 
 composer require filament/filament:"^3.2" -W
 php artisan filament:install --panels
+
+ganti (env)APP_URL:http://127.0.0.1:8000
+http://127.0.0.1:8000/admin
 php artisan make:filament-user
 
 username : admin
 email : admin@test.com
 password : admin
+
+php artisan optimize (kalau bug)
+php artisan storage:link
+php artisan serve
+
+php artisan make:filament-resource Airport
+php artisan make:filament-resource Airline
+php artisan make:filament-resource Facility
