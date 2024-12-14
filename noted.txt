@@ -1,0 +1,11 @@
+php artisan make:model Airport -m => membuat model beserta migration sekaligus
+php artisan make:model Airline -m
+php artisan make:model Flight -m
+php artisan make:model FlightSegment -m
+php artisan make:model FlightClass -m
+php artisan make:model FlightSeat -m
+php artisan make:model Facility -m
+php artisan make:migration create_flight_class_facility_table => pivot table
+php artisan make:model PromoCode -m
+php artisan make:model Transaction -m
+php artisan make:model TransactionPassenger -m
