@@ -9,3 +9,14 @@ php artisan make:migration create_flight_class_facility_table => pivot table
 php artisan make:model PromoCode -m
 php artisan make:model Transaction -m
 php artisan make:model TransactionPassenger -m
+
+buat schema database
+handle semua relasi database di models
+
+composer require filament/filament:"^3.2" -W
+php artisan filament:install --panels
+php artisan make:filament-user
+
+username : admin
+email : admin@test.com
+password : admin
