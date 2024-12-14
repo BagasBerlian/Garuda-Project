@@ -23,7 +23,7 @@ class FacilityResource extends Resource
     {
         return $form
             ->schema([
-                 Forms\Components\FileUpload::make('image')->image()->directory('facilities')->required()->columnSpan(2),
+                Forms\Components\FileUpload::make('image')->image()->directory('facilities')->required()->columnSpan(2),
                 Forms\Components\TextInput::make('name')->required(),
                 Forms\Components\TextInput::make('description')->required(),
             ]);
@@ -43,7 +43,7 @@ class FacilityResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

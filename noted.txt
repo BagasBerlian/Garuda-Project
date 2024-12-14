@@ -31,3 +31,7 @@ php artisan serve
 php artisan make:filament-resource Airport
 php artisan make:filament-resource Airline
 php artisan make:filament-resource Facility
+php artisan make:filament-resource PromoCode
+php artisan make:filament-resource Flight
+
+composer update (to solve isu in select multiple)

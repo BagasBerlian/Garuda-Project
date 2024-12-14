@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class PromoCodeResource extends Resource
 {
-    
+
     protected static ?string $model = PromoCode::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
@@ -41,9 +41,9 @@ class PromoCodeResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('code'),
-                Tables\Columns\TextColumn::make('discount')->formatStateUsing(fn(PromoCode $record): string => match($record->discount_type) {
-                    'fixed' => 'Rp '. number_format($record->discount, 0, ',', '.'),
-                    'percentage' => $record->discount. '%',
+                Tables\Columns\TextColumn::make('discount')->formatStateUsing(fn(PromoCode $record): string => match ($record->discount_type) {
+                    'fixed' => 'Rp ' . number_format($record->discount, 0, ',', '.'),
+                    'percentage' => $record->discount . '%',
                 }),
                 Tables\Columns\TextColumn::make('valid_until'),
                 Tables\Columns\ToggleColumn::make('is_used'),
@@ -54,7 +54,7 @@ class PromoCodeResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
