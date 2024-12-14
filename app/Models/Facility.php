@@ -15,4 +15,9 @@ class Facility extends Model
         'name',
         'description'
     ];
+
+    public function facilities() {
+        // 1 jenis fasilitas dapat memiliki lebih dari 1 fasilitas
+        return $this->belongsToMany(Facility::class, 'flight_class_facility', 'flight_class_id', 'facility_id');
+    }
 }

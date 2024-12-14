@@ -18,4 +18,9 @@ class FlightSeat extends Model
         'class_type',
         'is_available',
     ];
+
+    public function flight() {
+        // 1 kursi penumpang hanya dimiliki 1 penerbangan
+        return $this->belongsTo(Flight::class);
+    }
 }

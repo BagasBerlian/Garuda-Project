@@ -23,4 +23,24 @@ class Transaction extends Model
         'subtotal',
         'grandtotal'
     ];
+
+    public function flight() {
+        // 1 transaksi hanyak dimiliki 1 penerbangan
+        return $this->belongsTo(Flight::class);
+    }
+
+    public function class() {
+        // 1 transaksi hanyak dimiliki 1 kelas penerbangan
+        return $this->belongsTo(FlightClass::class);
+    }
+
+    public function promo() {
+        // 1 transaksi hanya bisa menggunakan 1 kode promo
+        return $this->belongsTo(PromoCode::class);
+    }
+
+    public function passengers() {
+        // 1 transaksi dapat memiliki banyak transaksi penumpang
+        return $this->hasMany(TransactionPassenger::class);
+    }
 }

@@ -15,4 +15,9 @@ class Airline extends Model
         'name',
         'logo',
     ];
+
+    public function flights() {
+        // 1 pesawat mempunyai banyak penerbangan
+        return $this->hasMany(Flight::class);
+    }
 }

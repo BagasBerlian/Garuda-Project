@@ -17,4 +17,9 @@ class Airport extends Model
         'city',
         'country'
     ];
+
+    public function segments() {
+        // 1 bandara mempunyai banyak segement penerbangan
+        return $this->hasMany(FlightSegment::class);
+    }
 }

@@ -17,4 +17,9 @@ class PromoCode extends Model
         'valid_until',
         'is_used'
     ];
+
+    public function transaction() {
+        // 1 promo code bisa digunakan sekali transaksi
+        return $this->hasOne(Transaction::class);
+    }
 }

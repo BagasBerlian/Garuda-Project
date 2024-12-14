@@ -16,4 +16,19 @@ class FlightClass extends Model
         'price',
         'total_seats'
     ];
+
+    public function flight() {
+        // 1 kelas penumpang hanya memiliki 1 penerbangan
+        return $this->belongsTo(Flight::class);
+    }
+
+    public function facilities() {
+        // 1 kelas penumpang dapat memiliki banyak fasilitas
+        return $this->belongsToMany(Facility::class, 'flight_class_facility', 'flight_class_id', 'facility_id');
+    }
+
+    public function transactions() {
+        // 1 kelas penumpang dapat memiliki banyak transaksi
+        return $this->hasMany(Transaction::class);
+    }
 }

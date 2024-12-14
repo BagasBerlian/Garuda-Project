@@ -17,4 +17,9 @@ class TransactionPassenger extends Model
         'date_of_birth',
         'nationality',
     ];
+
+    public function transaction() {
+        // 1 transaksi penumpang hanyak memiliki 1 transaksi
+        return $this->belongsTo(Transaction::class);
+    }
 }
